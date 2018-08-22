@@ -34,16 +34,6 @@ class Arm {
 			this.parent.drag(this.start);
 		}
 	}
-
-	draw(ctx) {
-		const { start, end } = this;
-
-		ctx.beginPath();
-		ctx.moveTo(start.x, start.y);
-		ctx.lineTo(end.x, end.y);
-		ctx.stroke();
-		ctx.closePath();
-	}
 }
 
 
@@ -80,10 +70,6 @@ class IKSystem {
 				arm.start.y = this.anchor.y;
 			}
 		});
-	}
-
-	draw(ctx) {
-		this.arms.forEach(arm => arm.draw(ctx));
 	}
 }
 
